@@ -1,0 +1,126 @@
+:root {
+	--gold-500: hsl(31, 77%, 52%);
+	--cyan-800: hsl(184, 100%, 22%);
+	--green-950: hsl(179, 100%, 13%);
+	--white-75: hsla(0, 0%, 100%, 0.75);
+	--gray-100: hsl(0, 0%, 95%);
+	--space-1: 1rem;
+	--space-2: 1.5rem;
+	--space-3: 2rem;
+	--radius: 0.6rem;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	padding: var(--space-3) var(--space-2);
+	background-color: var(--gray-100);
+	font-family: "Lexend Deca", sans-serif;
+	font-size: 15px;
+	display: grid;
+	place-items: center;
+	align-content: center;
+	color: var(--white-75);
+}
+
+.container {
+	width: min(100%, 58rem);
+	border-radius: var(--radius);
+	overflow: hidden;
+	display: grid;
+}
+
+.card {
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--space-2);
+}
+
+.card-sedans {
+	background-color: var(--gold-500);
+}
+
+.card-suvs {
+	background-color: var(--cyan-800);
+}
+
+.card-luxury {
+	background-color: var(--green-950);
+}
+
+.card-icon {
+	width: 4rem;
+	height: auto;
+}
+
+.card-title {
+	margin: 0;
+	color: var(--gray-100);
+	font-family: "Big Shoulders Display", cursive;
+	font-size: clamp(2rem, 6vw, 2.5rem);
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.card-text {
+	margin: 0;
+	line-height: 1.7;
+	max-width: 26ch;
+}
+
+.card-button {
+	margin-top: auto;
+	padding: 0.9rem 1.9rem;
+	border-radius: 999px;
+	border: 2px solid var(--gray-100);
+	background: var(--gray-100);
+	font-family: inherit;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+.card-sedans .card-button {
+	color: var(--gold-500);
+}
+
+.card-suvs .card-button {
+	color: var(--cyan-800);
+}
+
+.card-luxury .card-button {
+	color: var(--green-950);
+}
+
+.card-button:hover,
+.card-button:focus-visible {
+	background-color: transparent;
+	color: var(--gray-100);
+}
+
+.attribution {
+	margin-top: var(--space-2);
+	color: hsl(228, 12%, 48%);
+	font-size: 0.75rem;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 35%);
+}
+
+@media (min-width: 48rem) {
+	.container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.card {
+		min-height: 31rem;
+	}
+}
